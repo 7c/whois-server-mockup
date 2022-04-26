@@ -1,0 +1,50 @@
+Whois Server 
+
+   Domain Name: __domain__
+   Registrar: XYZ DOMAINS
+   Whois Server: whois.fozzie.wocka
+   Name Server: DNS1.DOM
+   Name Server: DNS2.DOM
+   Status: clientTransferProhibited
+   Status: clientLaughingProhibited
+   Updated Date: 27-jan-2020
+   Creation Date: 30-jan-2014
+   Expiration Date: 30-jan-2026
+
+>>> Last update of whois database: Mon, 18 Feb 2013 02:48:16 UTC <<<
+
+NOTICE: This whois information is completely fake, and is only intended
+to be used as a demonstration as to the simplicity and silliness of the
+established whois system. It took me 10 minutes, with little previous
+knowledge of node.js, to develop this fake whois service.
+
+For an enlightening look into the history, design, and function of whois,
+check out this page on Wikipedia: http://en.wikipedia.org/wiki/Whois
+
+Also note that this whois server is not compliant with the whois RFC.
+Like I said, I wrote it in about 10 minutes. Feel free to fork it on github
+and fill in the missing functionality in order to become RFC-compliant.
+
+
+Domain name: __domain__
+
+Registrant Contact:
+   Humpty Dumpty
+   New York, NY
+   US
+
+Administrative Contact:
+   Humpty Dumpty
+   New York, NY
+   US
+
+Technical Contact:
+   Humpty Dumpty
+   New York, NY
+   US
+
+Status: Locked
+
+Name Servers:
+    DNS1.com
+    DNS2.com
