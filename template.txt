@@ -27,6 +27,7 @@ and fill in the missing functionality in order to become RFC-compliant.
 
 
 Domain name: __domain__
+Your Ip: __ip__
 
 Registrant Contact:
    Humpty Dumpty

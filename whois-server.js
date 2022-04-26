@@ -16,20 +16,26 @@ function readTemplate(fn = 'template.txt') {
     })
 }
 
-function launchServer() {
+
+
+function launchServer(template) {
     return new Promise(async function (resolve, reject) {
         var server = net.createServer(function (c) {
-            console.log('client connected: ' + c.remoteAddress + ":" + c.remotePort)
+            let ip = c.remoteAddress.replace(/^.*:/, '')
+            let prefix = `${chalk.yellow(ip)}:${c.remotePort} | `
+            console.log(chalk.green(`${prefix}client connected`))
             c.on('end', function () {
-                console.log('client disconnected')
+                console.log(`${prefix}client ${chalk.red('disconnected')}`)
             })
 
             c.on('data', function (data) {
-                var domain = data.toString().trim().toUpperCase();
-                console.log('received ' + domain)
+                var domain = data.toString().trim()
+                console.log(`${prefix}queried: '${chalk.yellow(domain)}'`)
 
                 var output = template.replace(/__domain__/g, domain);
+                output = output.replace(/__ip__/g, ip);
                 c.write(output, function () {
+                    // close socket
                     c.end()
                 })
             })
@@ -48,16 +54,10 @@ async function start() {
         let template = await readTemplate(path.join(__dirname, 'template.txt'))
         console.log(chalk.yellow(`Template has been read successfully`))
         // launch udp server
-        let server = await launchServer()
+        let server = await launchServer(template)
     } catch (err) {
         console.log(chalk.red(err))
     }
 }
 
 start()
-
-fs.readFile('./template.txt', 'utf8', function (err, data) {
-    if (err) throw err;
-    var template = data;
-
-})
